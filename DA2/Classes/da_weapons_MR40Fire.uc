@@ -1,0 +1,29 @@
+class da_weapons_MR40Fire extends da_weapons_GunFire;
+
+defaultproperties
+{
+     MuzEmitterClass=Class'DA2.da_effects_MR40Muzzle1st'
+     FireSoundFar=Sound'DA2_WeaponSounds.Gunshots.MR40_FireFar'
+     FireSoundRand=0.070000
+     DamageType=Class'DA2.da_damtypes_MR40Heavy'
+     DamageMin=26
+     DamageMax=32
+     Momentum=1500.000000
+     bWaitForRelease=False
+     TransientSoundVolume=2.500000
+     TransientSoundRadius=400.000000
+     FireAnim="Fire_Loop"
+     FireLoopAnim="Fire_Loop"
+     FireEndAnim="Fire_End"
+     FireSound=Sound'DA2_WeaponSounds.Gunshots.MR40_Fire'
+     FireRate=0.130000
+     AmmoClass=Class'DA2.da_weapons_MR40Ammo'
+     ShakeRotMag=(X=130.000000,Y=130.000000,Z=255.000000)
+     ShakeRotRate=(X=5000.000000,Y=5000.000000,Z=5000.000000)
+     ShakeRotTime=1.500000
+     ShakeOffsetMag=(X=-15.000000,Y=9.000000,Z=14.000000)
+     ShakeOffsetTime=1.000000
+     BotRefireRate=0.990000
+     aimerror=140.000000
+     Spread=0.025000
+}

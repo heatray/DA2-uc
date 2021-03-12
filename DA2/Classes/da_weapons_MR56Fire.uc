@@ -1,0 +1,29 @@
+class da_weapons_MR56Fire extends da_weapons_GunFire;
+
+defaultproperties
+{
+     MuzEmitterClass=Class'DA2.da_effects_MR56Muzzle1st'
+     FireSoundFar=Sound'DA2_WeaponSounds.Gunshots.MR-56_FireFar'
+     FireSoundRand=0.050000
+     DamageType=Class'DA2.da_damtypes_MR56Rifle'
+     DamageMax=18
+     Momentum=8500.000000
+     bWaitForRelease=False
+     TransientSoundVolume=2.250000
+     TransientSoundRadius=250.000000
+     FireAnim="Fire_Loop"
+     FireLoopAnim="Fire_Loop"
+     FireEndAnim="Fire_End"
+     FireSound=Sound'DA2_WeaponSounds.Gunshots.MR-56_Fire'
+     FireRate=0.096000
+     AmmoClass=Class'DA2.da_weapons_MR56Ammo'
+     ShakeRotMag=(X=50.000000,Y=50.000000,Z=300.000000)
+     ShakeRotRate=(X=7500.000000,Y=7500.000000,Z=7500.000000)
+     ShakeRotTime=0.650000
+     ShakeOffsetMag=(X=-8.000000,Y=3.000000,Z=7.500000)
+     ShakeOffsetRate=(X=1000.000000,Y=1000.000000)
+     ShakeOffsetTime=1.150000
+     BotRefireRate=0.990000
+     aimerror=42.000000
+     Spread=0.012500
+}

@@ -1,0 +1,448 @@
+class da_effects_NuclearExplosion extends Emitter;
+
+var float LightEnd;
+
+simulated function PostBeginPlay()
+{
+	LightEnd=level.timeseconds+0.6;
+}
+
+simulated function tick(float dt)
+{
+    LightBrightness=fmax(0,default.lightbrightness*(lightend-level.timeseconds)/0.6);
+    super.tick(dt);
+}
+
+defaultproperties
+{
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter0
+         UseDirectionAs=PTDU_Up
+         UseColorScale=True
+         RespawnDeadParticles=False
+         UseRevolution=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         AutomaticInitialSpawning=False
+         BlendBetweenSubdivisions=True
+         UseRandomSubdivision=True
+         Acceleration=(Z=2500.000000)
+         ColorScale(0)=(Color=(B=134,G=181,R=251))
+         ColorScale(1)=(RelativeTime=0.075000,Color=(B=173,G=204,R=250,A=200))
+         ColorScale(2)=(RelativeTime=0.250000,Color=(B=95,G=157,R=220,A=255))
+         ColorScale(3)=(RelativeTime=0.696429,Color=(B=61,G=88,R=171,A=255))
+         ColorScale(4)=(RelativeTime=0.850000,Color=(B=23,G=28,R=83,A=200))
+         ColorScale(5)=(RelativeTime=1.000000,Color=(B=21,G=22,R=30))
+         FadeOutFactor=(X=0.000000,Y=0.000000,Z=0.000000)
+         FadeOutStartTime=1.666667
+         FadeInFactor=(W=0.000000,X=0.000000,Y=0.000000,Z=0.000000)
+         MaxParticles=180
+         StartLocationOffset=(Z=-1600.000000)
+         StartLocationRange=(X=(Min=-1200.000000,Max=1200.000000),Y=(Min=-1200.000000,Max=1200.000000))
+         StartLocationShape=PTLS_Polar
+         SphereRadiusRange=(Min=400.000000,Max=400.000000)
+         StartLocationPolarRange=(X=(Max=65536.000000),Y=(Min=10000.000000,Max=10000.000000),Z=(Min=2500.000000,Max=2500.000000))
+         SizeScale(0)=(RelativeSize=0.400000)
+         SizeScale(1)=(RelativeTime=0.070000,RelativeSize=1.200000)
+         SizeScale(2)=(RelativeTime=0.500000,RelativeSize=0.800000)
+         SizeScale(3)=(RelativeTime=0.750000,RelativeSize=0.300000)
+         SizeScale(4)=(RelativeTime=1.000000,RelativeSize=0.400000)
+         StartSizeRange=(X=(Min=225.000000,Max=300.000000),Y=(Min=600.000000,Max=750.000000),Z=(Min=600.000000,Max=750.000000))
+         ScaleSizeByVelocityMultiplier=(Y=0.005000)
+         InitialParticlesPerSecond=40.000000
+         DrawStyle=PTDS_AlphaBlend
+         Texture=Texture'da2effects2.EmitterTextures.ExploParticleTex'
+         TextureUSubdivisions=4
+         TextureVSubdivisions=4
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=2.666667,Max=3.333333)
+         StartVelocityRadialRange=(Min=5500.000000,Max=5500.000000)
+         VelocityLossRange=(X=(Min=2.200000,Max=2.800000),Y=(Min=2.200000,Max=2.800000),Z=(Min=2.200000,Max=2.800000))
+         GetVelocityDirectionFrom=PTVD_AddRadial
+         VelocityScale(0)=(RelativeTime=1.000000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
+     End Object
+     Emitters(0)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter0'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter1
+         UseColorScale=True
+         RespawnDeadParticles=False
+         UseRevolution=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         BlendBetweenSubdivisions=True
+         UseRandomSubdivision=True
+         Acceleration=(Z=2200.000000)
+         ColorScale(0)=(Color=(B=134,G=181,R=251))
+         ColorScale(1)=(RelativeTime=0.075000,Color=(B=255,G=255,R=255,A=200))
+         ColorScale(2)=(RelativeTime=0.300000,Color=(B=184,G=211,R=239,A=255))
+         ColorScale(3)=(RelativeTime=0.442857,Color=(B=61,G=94,R=163,A=255))
+         ColorScale(4)=(RelativeTime=0.646429,Color=(B=26,G=31,R=94,A=255))
+         ColorScale(5)=(RelativeTime=1.000000,Color=(B=21,G=22,R=30))
+         FadeOutFactor=(X=0.000000,Y=0.000000,Z=0.000000)
+         FadeOutStartTime=1.666667
+         FadeInFactor=(W=0.000000,X=0.000000,Y=0.000000,Z=0.000000)
+         MaxParticles=30
+         StartLocationOffset=(Z=-100.000000)
+         StartLocationRange=(X=(Min=-150.000000,Max=150.000000),Y=(Min=-150.000000,Max=150.000000),Z=(Min=-75.000000,Max=75.000000))
+         StartLocationShape=PTLS_Polar
+         SphereRadiusRange=(Min=400.000000,Max=400.000000)
+         StartLocationPolarRange=(X=(Max=65536.000000),Y=(Min=2000.000000,Max=5000.000000),Z=(Min=800.000000,Max=1000.000000))
+         SpinsPerSecondRange=(X=(Min=-0.150000,Max=0.150000))
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.400000)
+         SizeScale(1)=(RelativeTime=0.500000,RelativeSize=0.800000)
+         SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.000000)
+         StartSizeRange=(X=(Min=225.000000,Max=600.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=1575.000000
+         DrawStyle=PTDS_AlphaBlend
+         Texture=Texture'da2effects2.EmitterTextures.ExploParticleTex'
+         TextureUSubdivisions=4
+         TextureVSubdivisions=4
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=5.000000,Max=6.750000)
+         StartVelocityRadialRange=(Min=-1000.000000,Max=-1000.000000)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+         GetVelocityDirectionFrom=PTVD_AddRadial
+         VelocityScale(0)=(RelativeTime=1.000000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
+     End Object
+     Emitters(1)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter1'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter2
+         UseColorScale=True
+         RespawnDeadParticles=False
+         UseRevolution=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         BlendBetweenSubdivisions=True
+         UseRandomSubdivision=True
+         Acceleration=(Z=1800.000000)
+         ColorScale(0)=(Color=(B=134,G=181,R=251))
+         ColorScale(1)=(RelativeTime=0.075000,Color=(B=250,G=252,R=254,A=200))
+         ColorScale(2)=(RelativeTime=0.346429,Color=(B=198,G=220,R=242,A=255))
+         ColorScale(3)=(RelativeTime=0.646429,Color=(B=48,G=73,R=173,A=255))
+         ColorScale(4)=(RelativeTime=0.750000,Color=(B=23,G=28,R=104,A=255))
+         ColorScale(5)=(RelativeTime=1.000000,Color=(B=21,G=22,R=30))
+         FadeOutFactor=(X=0.000000,Y=0.000000,Z=0.000000)
+         FadeOutStartTime=1.666667
+         FadeInFactor=(W=0.000000,X=0.000000,Y=0.000000,Z=0.000000)
+         MaxParticles=70
+         StartLocationOffset=(Z=-220.000000)
+         StartLocationRange=(X=(Min=-450.000000,Max=450.000000),Y=(Min=-450.000000,Max=450.000000),Z=(Min=-75.000000,Max=75.000000))
+         StartLocationShape=PTLS_Polar
+         SphereRadiusRange=(Min=400.000000,Max=400.000000)
+         StartLocationPolarRange=(X=(Max=65536.000000),Y=(Min=6000.000000,Max=7000.000000),Z=(Min=900.000000,Max=1100.000000))
+         AlphaRef=3
+         SpinsPerSecondRange=(X=(Min=-0.250000,Max=0.250000))
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.400000)
+         SizeScale(1)=(RelativeTime=0.500000,RelativeSize=0.800000)
+         SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.000000)
+         StartSizeRange=(X=(Min=225.000000,Max=600.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=1575.000000
+         DrawStyle=PTDS_AlphaBlend
+         Texture=Texture'da2effects2.EmitterTextures.ExploParticleTex'
+         TextureUSubdivisions=4
+         TextureVSubdivisions=4
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=5.000000,Max=6.750000)
+         StartVelocityRadialRange=(Min=-1000.000000,Max=-1000.000000)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+         GetVelocityDirectionFrom=PTVD_AddRadial
+         VelocityScale(0)=(RelativeTime=1.000000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
+     End Object
+     Emitters(2)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter2'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter3
+         UseColorScale=True
+         RespawnDeadParticles=False
+         AlphaTest=False
+         UseRevolution=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         UseRandomSubdivision=True
+         Acceleration=(Z=900.000000)
+         ColorScale(1)=(RelativeTime=0.400000,Color=(B=101,G=167,R=233,A=255))
+         ColorScale(2)=(RelativeTime=1.000000)
+         Opacity=0.700000
+         FadeOutFactor=(X=0.000000,Y=0.000000,Z=0.000000)
+         FadeOutStartTime=0.700000
+         FadeInFactor=(W=0.000000,X=0.000000,Y=0.000000,Z=0.000000)
+         MaxParticles=20
+         StartLocationOffset=(X=10.000000,Z=800.000000)
+         StartLocationShape=PTLS_Polar
+         SphereRadiusRange=(Min=800.000000,Max=1000.000000)
+         StartLocationPolarRange=(X=(Max=65536.000000),Y=(Min=5000.000000,Max=20000.000000),Z=(Min=2000.000000,Max=2000.000000))
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.900000)
+         SizeScale(1)=(RelativeTime=0.750000,RelativeSize=1.000000)
+         SizeScale(2)=(RelativeSize=0.800000)
+         StartSizeRange=(X=(Min=1000.000000,Max=1500.000000))
+         InitialParticlesPerSecond=112.500000
+         Texture=Texture'da2effects2.EmitterTextures.FlameParticleTex'
+         TextureUSubdivisions=1
+         TextureVSubdivisions=1
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=0.200000,Max=0.500000)
+         StartVelocityRadialRange=(Min=-1000.000000,Max=-1000.000000)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+         GetVelocityDirectionFrom=PTVD_AddRadial
+         VelocityScale(0)=(RelativeTime=1.000000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
+     End Object
+     Emitters(3)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter3'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter4
+         UseColorScale=True
+         RespawnDeadParticles=False
+         AutoDestroy=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         UseRandomSubdivision=True
+         Acceleration=(Z=2500.000000)
+         ColorScale(1)=(RelativeTime=0.075000,Color=(B=186,G=237,R=252))
+         ColorScale(2)=(RelativeTime=0.696429,Color=(B=2,G=92,R=242))
+         ColorScale(3)=(RelativeTime=1.000000)
+         MaxParticles=1
+         StartLocationOffset=(X=15.000000)
+         SpinsPerSecondRange=(X=(Min=0.150000,Max=0.150000))
+         StartSpinRange=(X=(Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.800000)
+         SizeScale(1)=(RelativeTime=0.170000,RelativeSize=2.200000)
+         SizeScale(2)=(RelativeTime=1.000000,RelativeSize=1.300000)
+         StartSizeRange=(X=(Min=1350.000000,Max=1500.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=3000.000000
+         Texture=Texture'da2effects2.EmitterTextures.BrightFlareTex'
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=6.000000,Max=6.666667)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+     End Object
+     Emitters(4)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter4'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter5
+         UseDirectionAs=PTDU_Normal
+         UseColorScale=True
+         RespawnDeadParticles=False
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         BlendBetweenSubdivisions=True
+         UseRandomSubdivision=True
+         Acceleration=(Z=-100.000000)
+         ColorScale(0)=(Color=(B=180,G=190,R=255))
+         ColorScale(1)=(RelativeTime=1.000000)
+         MaxParticles=12
+         StartLocationOffset=(X=15.000000)
+         StartLocationRange=(Z=(Min=10.000000,Max=400.000000))
+         SphereRadiusRange=(Min=10.000000,Max=30.000000)
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.400000)
+         SizeScale(1)=(RelativeTime=1.000000,RelativeSize=7.000000)
+         StartSizeRange=(X=(Min=1000.000000,Max=1200.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=7500.000000
+         Texture=Texture'DA2Effects.Blast_4Frame'
+         TextureUSubdivisions=2
+         TextureVSubdivisions=2
+         LifetimeRange=(Max=6.000000)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+     End Object
+     Emitters(5)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter5'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter6
+         UseColorScale=True
+         RespawnDeadParticles=False
+         AutoDestroy=True
+         ZTest=False
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         UseRandomSubdivision=True
+         ColorScale(1)=(RelativeTime=0.075000,Color=(B=255,G=255,R=255))
+         ColorScale(2)=(RelativeTime=0.725000,Color=(B=118,G=116,R=92))
+         ColorScale(3)=(RelativeTime=1.000000)
+         MaxParticles=2
+         StartLocationOffset=(X=15.000000)
+         SpinsPerSecondRange=(X=(Min=15.000000,Max=15.000000))
+         StartSpinRange=(X=(Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.800000)
+         SizeScale(1)=(RelativeTime=0.170000,RelativeSize=2.000000)
+         SizeScale(2)=(RelativeTime=1.000000,RelativeSize=0.100000)
+         StartSizeRange=(X=(Min=10000.000000,Max=14000.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=3000.000000
+         Texture=Texture'da2effects2.EmitterTextures.BrightFlareTex'
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=0.300000,Max=0.400000)
+     End Object
+     Emitters(6)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter6'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter7
+         UseColorScale=True
+         RespawnDeadParticles=False
+         AutoDestroy=True
+         ZTest=False
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         UseRandomSubdivision=True
+         Acceleration=(Z=843.750000)
+         ColorScale(1)=(RelativeTime=0.075000,Color=(B=186,G=237,R=252))
+         ColorScale(2)=(RelativeTime=0.725000,Color=(B=2,G=80,R=208))
+         ColorScale(3)=(RelativeTime=1.000000)
+         MaxParticles=1
+         StartLocationOffset=(X=15.000000)
+         SpinsPerSecondRange=(X=(Min=0.150000,Max=0.150000))
+         StartSpinRange=(X=(Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.800000)
+         SizeScale(1)=(RelativeTime=0.280000,RelativeSize=2.000000)
+         SizeScale(2)=(RelativeTime=1.000000,RelativeSize=0.600000)
+         StartSizeRange=(X=(Min=1650.000000,Max=1950.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=3000.000000
+         Texture=Texture'da2effects2.EmitterTextures.BrightFlareTex'
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=5.333333,Max=6.000000)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+     End Object
+     Emitters(7)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter7'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter8
+         UseColorScale=True
+         FadeOut=True
+         RespawnDeadParticles=False
+         AlphaTest=False
+         UseRevolution=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         BlendBetweenSubdivisions=True
+         ColorScale(1)=(RelativeTime=0.200000,Color=(B=255,G=255,R=255,A=255))
+         ColorScale(2)=(RelativeTime=1.000000)
+         Opacity=0.250000
+         FadeOutFactor=(X=0.000000,Y=0.000000,Z=0.000000)
+         FadeOutStartTime=0.600000
+         FadeInFactor=(W=0.000000,X=0.000000,Y=0.000000,Z=0.000000)
+         MaxParticles=100
+         StartLocationOffset=(X=10.000000,Z=500.000000)
+         StartLocationShape=PTLS_Polar
+         SphereRadiusRange=(Min=800.000000,Max=1000.000000)
+         StartLocationPolarRange=(X=(Max=65536.000000),Y=(Min=14000.000000,Max=22000.000000),Z=(Min=900.000000,Max=900.000000))
+         SpinsPerSecondRange=(X=(Min=-0.300000,Max=0.300000))
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.700000)
+         SizeScale(1)=(RelativeTime=1.000000,RelativeSize=2.000000)
+         StartSizeRange=(X=(Min=900.000000,Max=1500.000000),Y=(Min=150.000000,Max=150.000000),Z=(Min=150.000000,Max=150.000000))
+         InitialParticlesPerSecond=600.000000
+         DrawStyle=PTDS_Brighten
+         Texture=Texture'DA2Effects.Weapon.SmokePanels2'
+         TextureUSubdivisions=4
+         TextureVSubdivisions=4
+         SubdivisionEnd=8
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Min=1.000000,Max=1.666667)
+         StartVelocityRadialRange=(Min=-9000.000000,Max=-9000.000000)
+         VelocityLossRange=(X=(Min=0.750000,Max=1.200000),Y=(Min=0.750000,Max=1.200000),Z=(Min=0.750000,Max=1.200000))
+         GetVelocityDirectionFrom=PTVD_AddRadial
+         VelocityScale(0)=(RelativeTime=1.000000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
+     End Object
+     Emitters(8)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter8'
+
+     Begin Object Class=MeshEmitter Name=MeshEmitter0
+         StaticMesh=StaticMesh'DA2_EffectMeshes.Meshes.CloudWave'
+         RenderTwoSided=True
+         UseParticleColor=True
+         UseColorScale=True
+         RespawnDeadParticles=False
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         AutomaticInitialSpawning=False
+         Acceleration=(Z=1012.500000)
+         ColorScale(1)=(RelativeTime=0.250000,Color=(B=255,G=244,R=222,A=255))
+         ColorScale(2)=(RelativeTime=1.000000)
+         Opacity=0.600000
+         MaxParticles=3
+         StartLocationRange=(Z=(Min=1400.000000,Max=1800.000000))
+         SpinsPerSecondRange=(Z=(Min=-0.050000,Max=0.050000))
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000),Y=(Min=0.250000,Max=0.250000),Z=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.500000)
+         SizeScale(1)=(RelativeTime=1.000000,RelativeSize=1.800000)
+         StartSizeRange=(X=(Min=30.000000,Max=60.000000),Y=(Min=75.000000,Max=75.000000),Z=(Min=75.000000,Max=75.000000))
+         InitialParticlesPerSecond=4.000000
+         DrawStyle=PTDS_Brighten
+         LifetimeRange=(Min=3.000000,Max=6.000000)
+         VelocityLossRange=(X=(Min=4.500000,Max=4.500000),Y=(Min=4.500000,Max=4.500000),Z=(Min=4.500000,Max=4.500000))
+     End Object
+     Emitters(9)=MeshEmitter'DA2.da_effects_NuclearExplosion.MeshEmitter0'
+
+     Begin Object Class=SpriteEmitter Name=SpriteEmitter9
+         UseColorScale=True
+         RespawnDeadParticles=False
+         UseRevolution=True
+         SpinParticles=True
+         UseSizeScale=True
+         UseRegularSizeScale=False
+         UniformSize=True
+         AutomaticInitialSpawning=False
+         BlendBetweenSubdivisions=True
+         UseRandomSubdivision=True
+         Acceleration=(Z=500.000000)
+         ColorScale(1)=(RelativeTime=0.200000,Color=(B=255,G=255,R=255,A=255))
+         ColorScale(2)=(RelativeTime=0.696429,Color=(B=143,G=156,R=184,A=255))
+         ColorScale(3)=(RelativeTime=0.896429,Color=(B=67,G=72,R=135,A=200))
+         ColorScale(4)=(RelativeTime=1.000000)
+         FadeOutFactor=(X=0.000000,Y=0.000000,Z=0.000000)
+         FadeOutStartTime=1.666667
+         FadeInFactor=(W=0.000000,X=0.000000,Y=0.000000,Z=0.000000)
+         MaxParticles=80
+         StartLocationOffset=(Z=-100.000000)
+         StartLocationRange=(X=(Min=-1200.000000,Max=1200.000000),Y=(Min=-1200.000000,Max=1200.000000))
+         StartLocationShape=PTLS_Polar
+         SphereRadiusRange=(Min=400.000000,Max=400.000000)
+         StartLocationPolarRange=(X=(Max=65536.000000),Y=(Min=10000.000000,Max=10000.000000),Z=(Min=1000.000000,Max=1200.000000))
+         SpinsPerSecondRange=(X=(Min=-0.300000,Max=0.300000))
+         StartSpinRange=(X=(Min=-1.000000,Max=1.000000))
+         SizeScale(0)=(RelativeSize=0.800000)
+         SizeScale(1)=(RelativeTime=0.200000,RelativeSize=1.200000)
+         SizeScale(2)=(RelativeTime=1.000000,RelativeSize=0.600000)
+         StartSizeRange=(X=(Min=225.000000,Max=600.000000),Y=(Min=600.000000,Max=750.000000),Z=(Min=600.000000,Max=750.000000))
+         ScaleSizeByVelocityMultiplier=(Y=0.005000)
+         InitialParticlesPerSecond=120.000000
+         Texture=Texture'da2effects2.EmitterTextures.FlameParticleTex'
+         TextureUSubdivisions=1
+         TextureVSubdivisions=1
+         SecondsBeforeInactive=0.000000
+         LifetimeRange=(Max=5.500000)
+         StartVelocityRadialRange=(Min=250.000000,Max=250.000000)
+         VelocityLossRange=(X=(Min=0.800000,Max=1.000000),Y=(Min=0.800000,Max=1.000000),Z=(Min=0.800000,Max=1.000000))
+         GetVelocityDirectionFrom=PTVD_AddRadial
+         VelocityScale(0)=(RelativeTime=1.000000,RelativeVelocity=(X=0.200000,Y=0.200000,Z=0.200000))
+     End Object
+     Emitters(10)=SpriteEmitter'DA2.da_effects_NuclearExplosion.SpriteEmitter9'
+
+     AutoDestroy=True
+     LightType=LT_Steady
+     LightEffect=LE_NonIncidence
+     LightHue=20
+     LightSaturation=222
+     LightBrightness=400.000000
+     LightRadius=255.000000
+     bNoDelete=False
+     bDynamicLight=True
+}
